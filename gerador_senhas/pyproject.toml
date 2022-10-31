@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "gerador-senhas"
+version = "0.1.0"
+description = ""
+authors = ["Talisson Avila <talisson_avila@hotmail.com>"]
+readme = "README.md"
+packages = [{include = "gerador_senhas"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
