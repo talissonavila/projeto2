@@ -3,8 +3,10 @@ from random import randint, choice, shuffle
 
 def make_one_special_char() -> str:
     """Creates a special char, choosing one of four unicode ranges.
+
     Args:
         None.
+
     Returns:
         chr(choice(char_ranges))chr(choice(char_ranges)) (str): one special char.
     """
@@ -19,8 +21,10 @@ def make_one_special_char() -> str:
 
 def make_one_uppercase_letter() -> str:
     """Creates a char in uppercase letter. Range: A-Z.
+
     Args:
         None.
+
     Returns:
          chr(randint(65, 90)) (str): one uppercase letter.
     """
@@ -29,8 +33,10 @@ def make_one_uppercase_letter() -> str:
 
 def make_one_lowercase_letter() -> str:
     """Creates a char in lowercase letter. Range: a-z.
+
     Args:
         None.
+
     Returns:
          chr(randint(97, 122)) (str): one lowercase letter.
     """
@@ -39,15 +45,17 @@ def make_one_lowercase_letter() -> str:
 
 def make_one_number() -> str:
     """Creates a char in number. Range: 0-9.
+
     Args:
         None.
+
     Returns:
          chr(randint(48, 57)) (str): one number in range 0, 9.
     """
     return chr(randint(48, 57))
 
 
-def make_passowrd(length: int = 16, chars: bool = True, lower: bool = True, upper: bool = True,
+def make_password(length: int = 16, chars: bool = True, lower: bool = True, upper: bool = True,
                   numbers: bool = True) -> str:
     """Creates a passowrd with at least 4 chars. If length was not declared. Passoword has length of 16.
     Password must have: special chars or lowercase letter or uppercase letter or numbers.
@@ -58,6 +66,7 @@ def make_passowrd(length: int = 16, chars: bool = True, lower: bool = True, uppe
         lower (bool): if the password has or hasn't lowercase letters.
         upper (bool): if the password has or hasn't uppercase letters.
         numbers (bool): if the passowrd has or hasn't numbers.
+
     Retuns:
         ''.join(new_password) (str): the password complete.
     """
@@ -85,41 +94,41 @@ def make_passowrd(length: int = 16, chars: bool = True, lower: bool = True, uppe
 if __name__ == '__main__':
     print('\033[1m\033[94mPADRÃO\033[0m')
     for i in range(2):
-        print(make_passowrd(length=8))
+        print(make_password(length=5))
     print()
 
     print('\033[1m\033[94mSEM CARACTERES ESPECIAIS\033[0m')
     for i in range(2):
-        print(make_passowrd(chars=False))
+        print(make_password(chars=False))
     print()
 
     print('\033[1m\033[94mSEM UPPER\033[0m')
     for i in range(2):
-        print(make_passowrd(upper=False))
+        print(make_password(upper=False))
     print()
 
     print('\033[1m\033[94mSEM LOWER\033[0m')
     for i in range(2):
-        print(make_passowrd(lower=False))
+        print(make_password(lower=False))
     print()
 
     print('\033[1m\033[94mAPENAS LOWER\033[0m')
     for i in range(2):
-        print(make_passowrd(chars=False, upper=False, numbers=False, lower=True))
+        print(make_password(chars=False, upper=False, numbers=False, lower=True))
     print()
 
     print('\033[1m\033[94mAPENAS UPPER\033[0m')
     for i in range(2):
-        print(make_passowrd(chars=False, upper=True, numbers=False, lower=False))
+        print(make_password(chars=False, upper=True, numbers=False, lower=False))
     print()
 
     print('\033[1m\033[94mAPENAS NUM\033[0m')
     for i in range(2):
-        print(make_passowrd(chars=False, upper=False, numbers=True, lower=False))
+        print(make_password(chars=False, upper=False, numbers=True, lower=False))
     print()
 
     print('\033[1m\033[94mAPENAS CARACTERES ESPECIAIS\033[0m')
     for i in range(2):
-        print(make_passowrd(length=16, chars=True,
+        print(make_password(length=16, chars=True,
                             upper=False, numbers=False, lower=False))
     print()
