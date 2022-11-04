@@ -43,6 +43,10 @@ class TestPasswordGenerator(unittest.TestCase):
             with self.assertRaises(TypeError):
                 make_password(length='a')
 
+        with self.subTest('Testing if returns a Type Error with float as param.'):
+            with self.assertRaises(TypeError):
+                make_password(length=8.1)
+
         with self.subTest('Testing if creates passwords in accepteded cases.'):
             for count in range(4, 100):
                 self.assertTrue(len(make_password(length=count)) == count)

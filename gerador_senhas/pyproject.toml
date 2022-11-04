@@ -8,8 +8,17 @@ packages = [{include = "gerador_senhas"}]
 
 [tool.poetry.dependencies]
 python = "^3.9"
+coverage = "^6.5.0"
 
+
+[tool.poetry.group.dev.dependencies]
+coverage = {extras = ["toml"], version = "^6.5.0"}
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.coverage.run]
+omit = [".*", "*/site-packages/*"]
+[tool.coverage.report]
+fail_under = 100
